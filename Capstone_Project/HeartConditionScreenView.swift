@@ -21,7 +21,16 @@ struct HeartConditionScreenView: View {
                 return "Your blood pressure is normal."
             }
         }
-    
+    var heartRateStatus: String {
+            let heartRate = sharedData.heartRateValue
+            if heartRate > 100 {
+                return "Your heart rate is high. Please consult your doctor."
+            } else if heartRate < 60 {
+                return "Your heart rate is low. Please consult your doctor."
+            } else {
+                return "Your heart rate is normal."
+            }
+        }
     
     
     var body: some View {
